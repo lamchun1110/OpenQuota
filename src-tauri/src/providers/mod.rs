@@ -10,8 +10,8 @@ mod detection;
 pub mod devin;
 pub mod grok;
 pub mod kimi;
-pub mod minimax;
 mod log_usage;
+pub mod minimax;
 pub mod opencode;
 pub mod openrouter;
 mod pi_usage;
@@ -284,18 +284,27 @@ mod tests {
         assert_eq!(
             links(kimi::definition()),
             [
-                ("Dashboard".into(), "https://platform.moonshot.ai/".into()),
+                (
+                    "Dashboard".into(),
+                    "https://www.kimi.com/code/console".into()
+                ),
                 (
                     "API Keys".into(),
-                    "https://platform.moonshot.ai/console/api-keys".into()
+                    "https://www.kimi.com/code/console".into()
                 ),
             ]
         );
         assert_eq!(
             links(minimax::definition()),
             [
-                ("Dashboard".into(), "https://www.minimax.io/".into()),
-                ("API Keys".into(), "https://platform.minimaxi.com/".into()),
+                (
+                    "Dashboard".into(),
+                    "https://platform.minimax.io/console/plan".into()
+                ),
+                (
+                    "API Keys".into(),
+                    "https://platform.minimax.io/console/access".into()
+                ),
             ]
         );
     }
