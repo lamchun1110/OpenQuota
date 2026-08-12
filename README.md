@@ -43,8 +43,8 @@ OpenQuota checks for updates automatically. Installable updates are cryptographi
 
 - **[Claude Code](docs/providers/claude.md)** — multiple accounts, session and weekly limits,
   model-specific usage, token history, and estimated spend
-- **[Command Code](docs/providers/commandcode.md)** — session and weekly credit limits, monthly
-  subscription credits, and extra-credit balance
+- **[Command Code](docs/providers/commandcode.md)** — session, weekly, and monthly subscription
+  quotas, reset times, and credit balances
 - **[Codex](docs/providers/codex.md)** — session and weekly limits, credits, token history, model
   breakdown, and estimated spend
 - **[Cursor](docs/providers/cursor.md)** — total, Auto and API usage, credits, token history, and
@@ -55,8 +55,8 @@ OpenQuota checks for updates automatically. Installable updates are cryptographi
 - **[Devin](docs/providers/devin.md)** — daily and weekly limits, reset times, and extra usage balance
 - **[Grok](docs/providers/grok.md)** — weekly allowance, extra usage status, token history, and
   estimated spend
-- **[OpenCode](docs/providers/opencode.md)** — OpenCode Go session, weekly and monthly spend caps,
-  plus local hosted usage history
+- **[OpenCode](docs/providers/opencode.md)** — OpenCode Go rolling, weekly, and monthly account
+  quotas, plus local hosted usage history
 - **[OpenRouter](docs/providers/openrouter.md)** — credit balance and daily, weekly and monthly spend
   (API key)
 - **[Z.ai](docs/providers/zai.md)** — GLM Coding Plan session, weekly, and web-search quotas (API key)
@@ -71,8 +71,8 @@ sessions.
 
 ## Features
 
-- **Tray or floating dashboard.** View quotas in a compact popup, or keep the panel open and move it
-  around your desktop.
+- **Tray or floating dashboard.** View quotas in a compact popup, or keep the panel open and drag
+  its title bar to reposition it anywhere on your desktop.
 - **Pinned metrics.** Keep important values visible in the tray or macOS menu bar.
 - **Used or left.** Display how much quota you have consumed or how much remains.
 - **Usage history.** Review today, yesterday, and the last 30 days of token usage and estimated

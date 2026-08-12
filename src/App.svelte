@@ -438,12 +438,6 @@
   }
   function handleWindowPointerDown(event: PointerEvent) {
     if (
-      event.target instanceof Element &&
-      event.target.closest('.floating-chrome__drag') !== null
-    ) {
-      handleFloatingWindowPointerDown(event);
-    }
-    if (
       optionsMenuElement?.open &&
       event.target instanceof Node &&
       !optionsMenuElement.contains(event.target)
@@ -509,13 +503,6 @@
     void operation.finally(() => {
       if (panelResizeOperation === operation) panelResizeOperation = null;
     });
-  }
-  function handleFloatingWindowPointerDown(event: PointerEvent) {
-    if (event.button !== 0 || !('__TAURI_INTERNALS__' in window)) return;
-    event.preventDefault();
-    void getCurrentWindow()
-      .startDragging()
-      .catch(() => (settingsError = 'OpenQuota window could not be moved.'));
   }
   async function changePanelHeightMode(mode: PanelHeightMode) {
     if (!('__TAURI_INTERNALS__' in window)) return;
@@ -703,7 +690,11 @@
   {/if}
   {#if floatingWindow}
     <header class="floating-chrome" aria-label="OpenQuota window controls">
-      <div class="floating-chrome__drag">
+      <div
+        class="floating-chrome__drag"
+        data-tauri-drag-region
+        title="Drag to reposition OpenQuota"
+      >
         <OpenQuotaMark size={14} />
         <span>OpenQuota</span>
       </div>
